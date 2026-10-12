@@ -1,9 +1,9 @@
 // Offline support: keeps the app shell on the phone so it opens without signal.
 // Bump VERSION whenever you change files so phones pick up the update.
-const VERSION = 'betel-v1';
+const VERSION = 'betel-v2';
 const SHELL = [
-  './', 'index.html', 'css/app.css', 'js/config.js', 'js/i18n.js', 'js/app.js',
-  'manifest.webmanifest', 'icons/logo-mark.png', 'icons/icon-192.png'
+  './', 'index.html', 'app.css', 'config.js', 'i18n.js', 'app.js',
+  'manifest.webmanifest', 'logo-mark.png', 'icon-192.png'
 ];
 
 self.addEventListener('install', (e) => {
@@ -20,7 +20,7 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   const url = new URL(e.request.url);
   if (e.request.method !== 'GET' || url.origin !== location.origin) return; // YouTube, fonts, Supabase: straight to network
-  if (url.pathname.startsWith('/.netlify/')) return; // live data: always network
+  if (url.pathname === '/yt-feed') return; // live data: always network
 
   // Network first, fall back to cache (so updates show quickly, offline still works)
   e.respondWith(

@@ -1,6 +1,13 @@
+# Netlify settings for the Betel Manchester app.
 [build]
   publish = "."
-  functions = "netlify/functions"
+
+# The app reads the church's latest YouTube videos through this address.
+[[redirects]]
+  from = "/yt-feed"
+  to = "https://www.youtube.com/feeds/videos.xml?channel_id=UCCCzTneGFC7dKoo5OC9B04g"
+  status = 200
+  force = true
 
 [[headers]]
   for = "/sw.js"
