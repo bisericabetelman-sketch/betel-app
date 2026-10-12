@@ -1,0 +1,16 @@
+{
+  "name": "Betel Manchester",
+  "short_name": "Betel",
+  "description": "Biserica Creștină după Evanghelie Betel Manchester — meetings, sermons, prayer and giving.",
+  "start_url": "./#/home",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F3F6F6",
+  "theme_color": "#207273",
+  "lang": "en",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
